@@ -1,0 +1,51 @@
+<div class="well row">
+        <div class="col-md-4"></div>
+               <div class="col-md-4">
+        	<div class="row home-container">
+        	<h2>Register</h2>
+        	<hr/>
+		       <form name="userForm" ng-submit="saveRegisteration(userForm.$valid)" novalidate>
+
+		       	<div class="row row-space">
+	              <div class="col-md-3">First Name</div>
+		           <div class="col-md-4">
+		           		<input type="text" ng-model="userObj.firstName" name="firstName" required/>
+						  <span style="color:red" ng-show="userForm.firstName.$dirty && userForm.firstName.$invalid">
+						  	<span ng-show="userForm.firstName.$error.required">First name is required.</span>
+						  </span>
+		           </div>
+		        </div>
+
+				<div class="row row-space" >
+		           <div class="col-md-3">Last Name</div>
+		           <div class="col-md-4">
+		           		<input type="text" ng-model="userObj.lastName" name="lastName" required/>
+						  <span style="color:red" ng-show="userForm.lastName.$dirty && userForm.lastName.$invalid">
+						  	<span ng-show="userForm.lastName.$error.required">Last name is required.</span>
+						  </span>
+		           </div>
+		        </div>
+
+				<div class="row row-space" >
+		           <div class="col-md-3">Email</div>
+		           <div class="col-md-4">
+		           		<input type="email" ng-model="userObj.email" name="email" required/>
+						  <span style="color:red" ng-show="userForm.email.$dirty && userForm.email.$invalid">
+						  	<span ng-show="userForm.email.$error.required">Email is required.</span>
+						  	<span ng-show="userForm.email.$error.email">Invalid email address.</span>
+						  </span>
+		           </div>
+		        </div>
+
+		        <div class="row row-space" >
+		           <div class="col-md-3"></div>
+		           <div class="col-md-4">
+		           		<input type="submit" name="Save" value="Submit" 
+		           		ng-disabled="userForm.firstName.$dirty && userForm.firstName.$invalid || userForm.lastName.$dirty && userForm.lastName.$invalid || userForm.email.$dirty && userForm.email.$invalid" />
+		           </div>
+		        </div>
+		    	</form>
+			</div>
+        </div>
+<div class="col-md-4"></div>
+</div>

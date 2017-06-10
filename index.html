@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myDemoApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="app/css/app.css" >
+    <link rel="stylesheet" href="app/css/bootstrap.min.css" >
+</head>
+<body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li ui-sref="home" class=""><a href="#">Home</a></li>
+            <!-- <li ui-sref="quiz" ><a href="#">Quiz</a></li> -->
+          </ul>
+        </nav>
+        <h3 class="text-muted"></h3>
+      </div>
+
+      <div data-ui-view="" data-autoscroll="false" class="wrapper"></div>
+      <script defer="defer"></script>
+
+      <footer class="footer">
+        <p></p>
+      </footer>
+    </div>
+
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/bootstrap.min.js"></script>
+	  <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular/angular-route.min.js"></script>
+    <script src="vendor/angular-ui-router/angular-ui-router.min.js"></script>
+	  <script src="app/src/app.js"></script>
+	  <script src="app/src/module/module.main.js"></script>
+
+    <script src="app/src/module/home/home.config.js"></script>
+    <script src="app/src/module/home/home.controller.js"></script>
+
+    <script src="app/src/module/quiz/quiz.config.js"></script>
+    <script src="app/src/module/quiz/quiz.controller.js"></script>
+    <script src="app/src/module/quiz/quiz.service.js"></script>
+        
+</body>
+</html>

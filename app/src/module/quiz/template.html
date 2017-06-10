@@ -1,0 +1,52 @@
+<div class="col-md-12 float-right">
+	<h6 class="float-right" >Welcome {{userDetails.firstName}}! </h6>
+</div>
+
+<div class="quiz-area" ng-show="inProgress">
+	<div ng-show="!quizOver">
+		<h3 id="question">{{question}}</h3>
+		<ul id="options">
+			<li ng-repeat="option in options">
+				<label>
+					<input type="radio" name="answer" value="{{option}}">
+					{{option}}
+				</label>
+			</li>
+		</ul>
+		<button ng-click="checkAnswer()" ng-show="answerMode">Submit</button> 
+	</div>
+	<div id="score" ng-show="quizOver">
+		<div>
+			{{userDetails.firstName}} {{userDetails.lastName}},
+			Thank you You have compeleted the quiz.
+		</div>
+		<hr/>
+		<div>
+			<h2>Your Score : {{score}} / {{totalQuestion}}</h2>
+		</div>
+		<hr/>
+		<h3>Review your answer:</h3>
+		<div class="result-set" ng-repeat="resultObj in resultList">
+			<h4 id="question">{{$index+1}}. {{resultObj.question}}</h4>
+			<ul id="options">
+				<li ng-repeat="option in resultObj.options">
+					<label>
+						<input type="radio" name="answer" value="{{option}}">
+						{{option}}
+					</label>
+				</li>
+			</ul>
+			Correct answer: {{resultObj.options[resultObj.answer]}}<br/>
+			Your answer: {{resultObj.answerValue}}
+		</div>
+	</div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+		<div class="col-md-12">
+        	<h3>Are you ready to take quiz?</h3>
+       </div>
+       <div class="col-md-12">
+			<button id="startQuiz" ng-click="start()">Start the Quiz</button>
+       </div>
+</div>
